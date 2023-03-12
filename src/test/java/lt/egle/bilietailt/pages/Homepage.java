@@ -22,17 +22,17 @@ public class Homepage {
         Common.clickElement(Locator.Homepage.radiobuttonKitaSavaite);
     }
 
-    public static String getStartDateBackgroundColor() {
+    public static String getStartDateBackgroundColor(String day) {
         Common.waitUntilPageCompletelyLoaded(10);
-        return Common.getAttributeColor(Locator.Homepage.startDateKitaSavaite);
+        return Common.getAttributeColor(Locator.Homepage.inputByDayofMonth(day));
     }
 
-    public static String getEndDateBackgroundColor() {
-        return Common.getAttributeColor(Locator.Homepage.endDateKitaSavaite);
+    public static String getEndDateBackgroundColor(String day) {
+        return Common.getAttributeColor(Locator.Homepage.inputByDayofMonth(day));
     }
 
 
-    public static int getDayFrom() {
+    public static int getDayOfMonthFrom() {
         int dayFrom = 0;
 
         int todayDayofMonth = LocalDate.now().getDayOfMonth();
@@ -55,4 +55,5 @@ public class Homepage {
         }
         return dayFrom;
     }
+
 }
