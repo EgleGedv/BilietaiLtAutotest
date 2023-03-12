@@ -1,11 +1,9 @@
 package lt.egle.bilietailt.pages;
 
 import lt.egle.bilietailt.utils.Driver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -109,14 +107,14 @@ public class Common {
     public static void waitUntilPageCompletelyLoaded(int seconds) {
         JavascriptExecutor j = (JavascriptExecutor) Driver.getDriver();
 
-        for (int i = 0; i <= seconds*2; i++) {
-            sleep(seconds*1000/2);
+        for (int i = 0; i <= seconds * 2; i++) {
+            sleep(seconds * 1000 / 2);
             if (j.executeScript("return document.readyState").toString().equals("complete")) break;
         }
     }
 
     public static void scrollToElement(By locator) {
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
         WebElement Element = Driver.getDriver().findElement(locator);
         js.executeScript("arguments[0].scrollIntoView();", Element);
     }
@@ -129,6 +127,32 @@ public class Common {
                 .dragAndDropBy(element, xOffSet, yOffSet)
                 .build()
                 .perform();
+    }
+
+    public static boolean isAlertPresent() {
+        try {
+            Driver.getDriver().switchTo().alert();
+        } catch (NoAlertPresentException e) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public static void waitForElementAttributeChange(
+            By locator, String attributeName, String attributeValue
+    ) {
+        WebDriverWait webDriverWait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+        webDriverWait.until(ExpectedConditions.attributeContains(
+                locator, attributeName, attributeValue
+        ));
+    }
+
+    public static String getAttributeColor(By locator) {
+        WebElement pseudoEle = Driver.getDriver().findElement(locator);
+        String colorRGB;
+        colorRGB = ((JavascriptExecutor)Driver.getDriver()).executeScript("return window.getComputedStyle(arguments[0], ':after').getPropertyValue('background-color');", pseudoEle).toString();
+        return colorRGB;
     }
 }
 
