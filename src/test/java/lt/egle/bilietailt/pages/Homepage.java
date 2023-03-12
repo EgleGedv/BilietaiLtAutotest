@@ -31,7 +31,6 @@ public class Homepage {
         return Common.getAttributeColor(Locator.Homepage.inputByDayofMonth(day));
     }
 
-
     public static int getDayOfMonthFrom() {
         int dayFrom = 0;
 
@@ -55,5 +54,4 @@ public class Homepage {
         }
         return dayFrom;
     }
-
 }

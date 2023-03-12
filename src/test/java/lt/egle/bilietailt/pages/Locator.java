@@ -14,7 +14,5 @@ public class Locator {
                     String.format("//td[contains(@class, 'calendar_selector')]//span[contains(text(),'%s')]", day)
             );
         }
-
-
     }
 }

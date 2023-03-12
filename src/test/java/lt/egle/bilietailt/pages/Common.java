@@ -3,7 +3,6 @@ package lt.egle.bilietailt.pages;
 import lt.egle.bilietailt.utils.Driver;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -114,7 +113,7 @@ public class Common {
     }
 
     public static void scrollToElement(By locator) {
-        JavascriptExecutor js = (JavascriptExecutor)Driver.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         WebElement Element = Driver.getDriver().findElement(locator);
         js.executeScript("arguments[0].scrollIntoView();", Element);
     }
@@ -151,7 +150,7 @@ public class Common {
     public static String getAttributeColor(By locator) {
         WebElement pseudoEle = Driver.getDriver().findElement(locator);
         String colorRGB;
-        colorRGB = ((JavascriptExecutor)Driver.getDriver()).executeScript("return window.getComputedStyle(arguments[0], ':after').getPropertyValue('background-color');", pseudoEle).toString();
+        colorRGB = ((JavascriptExecutor) Driver.getDriver()).executeScript("return window.getComputedStyle(arguments[0], ':after').getPropertyValue('background-color');", pseudoEle).toString();
         return colorRGB;
     }
 }

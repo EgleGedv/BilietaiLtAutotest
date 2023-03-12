@@ -16,7 +16,7 @@ public class TimePeriodFilterTest extends BaseTest {
     }
 
     @Test
-    public void testFilterKitaSavaiteFromAndToDatesGetMarkedInBlue(){
+    public void testFilterKitaSavaiteFromAndToDatesGetMarkedInBlue() {
         String expectedResult = "rgb(25, 0, 95)";
 
         int dayOfMonthFrom = Homepage.getDayOfMonthFrom();
@@ -33,6 +33,4 @@ public class TimePeriodFilterTest extends BaseTest {
 
         Assert.assertTrue(actualResultStartDate.contains(expectedResult) & actualResultEndDate.contains(expectedResult));
     }
-
-
 }
