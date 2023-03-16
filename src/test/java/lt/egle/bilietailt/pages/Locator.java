@@ -7,7 +7,7 @@ public class Locator {
 
         public static By buttonAcceptCookies = By.xpath("//*[@id='CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll']");
         public static By buttonPasirinkitePerioda = By.xpath("(//span[@class='date_search_button_text'])[1]");
-        public static By radiobuttonKitaSavaite = By.xpath("/html/body/div[7]/form/div[1]/div[3]/a");
+        public static By radiobuttonKitaSavaite = By.xpath("/html/body/div[8]/form/div[1]/div[3]/a");
 
         public static By inputByDayofMonth(String day) {
             return By.xpath(

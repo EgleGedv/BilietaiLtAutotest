@@ -19,6 +19,7 @@ public class Homepage {
     }
 
     public static void selectKitaSavaite() {
+        Common.waitUntilPageCompletelyLoaded(10);
         Common.clickElement(Locator.Homepage.radiobuttonKitaSavaite);
     }
 
