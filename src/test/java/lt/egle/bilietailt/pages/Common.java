@@ -116,6 +116,7 @@ public class Common {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         WebElement Element = Driver.getDriver().findElement(locator);
         js.executeScript("arguments[0].scrollIntoView();", Element);
+
     }
 
     public static void setSlideElement(By locator, int xOffSet, int yOffSet) {
