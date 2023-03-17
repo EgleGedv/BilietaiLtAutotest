@@ -20,7 +20,7 @@ public class Homepage {
 
     public static void selectKitaSavaite() {
         Common.waitUntilPageCompletelyLoaded(10);
-        Common.clickElement(Locator.Homepage.radiobuttonKitaSavaite);
+        Common.clickElement(Locator.Homepage.labelKitaSavaite);
     }
 
     public static String getStartDateBackgroundColor(String day) {
@@ -54,5 +54,9 @@ public class Homepage {
             dayFrom = todayDayofMonth + 2;
         }
         return dayFrom;
+    }
+
+    public static void selectDovanuCekiai() {
+        Common.clickElement(Locator.Homepage.buttonDovanuCekiai);
     }
 }
