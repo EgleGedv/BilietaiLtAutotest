@@ -13,3 +13,19 @@ Link to the test website -  [bilietai.lt](https://bilietai.lt/)
 2. Click on the radio button "Kita savaite"
 
 *Expected result: The correct from and to dates for the next week will become coloured in blue, when clicked on radio button "Kita savaite"*
+
+### 2. Cart
+
+#### 2.1. Add a 50 euro giftcard to cart
+
+1. In the main page, click on "Dovanų čekiai"
+2. Mouse hover on a first item's image "Bilietai.lt Dovanų čekis", a green button "Pirkti bilietą" should appear
+3. Click the green button "Pirkti bilietą"
+4. When the new page opens, click the green button "Pirkti bilietą" again
+5. Scroll down to price category, next to "50€ vertės (50.00 €)" select qty "1" by clicking a green "+" button.
+6. Click "Tinka"
+7. Below "Siūlomos vietos" again click "Tinka"
+8. After the new page opens, on the right enter test email: Cocococonut144@gmail.com
+9. Click "Apmokėti"
+
+*Expected Result: New page will open with number 1 (showing a number of items added) in superscript letters next to 'Pirkinių krepšelis'* 
