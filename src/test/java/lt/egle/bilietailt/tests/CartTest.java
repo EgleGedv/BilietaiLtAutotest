@@ -21,8 +21,8 @@ public class CartTest extends BaseTest {
 
         String expectedResult = "1";
         String actualResult;
-
         String email = "Cocococonut144@gmail.com";
+
         GiftCardsPage.selectBuyDovanuCekis();
         BilietaiLtDovanuCekisPage.selectBuyATicket();
         BilietaiLtDovanuCekisPage.selectQuantityFor50Euro();
