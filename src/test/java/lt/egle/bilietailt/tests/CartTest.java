@@ -23,16 +23,41 @@ public class CartTest extends BaseTest {
         String actualResult;
         String email = "Cocococonut144@gmail.com";
 
-        GiftCardsPage.selectBuyDovanuCekis();
-        BilietaiLtDovanuCekisPage.selectBuyATicket();
-        BilietaiLtDovanuCekisPage.selectQuantityFor50Euro();
-        BilietaiLtDovanuCekisPage.selectTinka();
-        BilietaiLtDovanuCekisPage.selectTinkaUnderSiulomosVietos();
+        GiftCardsPage.selectBilietaiLtDovanuCekis();
+        BilietaiLtDovanuCekisPage.selectPirktiBilieta();
+        CartPage.selectQuantity1For50Euro();
+        CartPage.selectTinka();
+        CartPage.selectTinkaUnderSiulomosVietos();
         CartPage.enterContactEmail(email);
         CartPage.selectApmoketi();
 
         actualResult = CartPage.getCartCounterNumber();
 
-        Assert.assertTrue(actualResult.contains(expectedResult));
+        Assert.assertTrue(actualResult.contains(expectedResult),
+                String.format("Expected result: %s; Actual result: %s", expectedResult, actualResult));
+    }
+
+    @Test
+    public void testAddAndRemoveBilietaiLtDovanuCekisFromCart() {
+
+        String expectedResult = "Bilietų pasirinkimas";
+        String actualResult;
+        String email = "Cocococonut144@gmail.com";
+
+        GiftCardsPage.selectBilietaiLtDovanuCekis();
+        BilietaiLtDovanuCekisPage.selectPirktiBilieta();
+        CartPage.selectQuantity1For50Euro();
+        CartPage.selectTinka();
+        CartPage.selectTinkaUnderSiulomosVietos();
+        CartPage.enterContactEmail(email);
+        CartPage.selectApmoketi();
+
+        CartPage.removeBilietaiLtDovanuCekisFromCart();
+
+        actualResult = CartPage.getCurrentPageTitle();
+
+        Assert.assertTrue(actualResult.contains(expectedResult),
+                String.format("Expected result: %s; Actual result: %s", expectedResult, actualResult)
+        );
     }
 }

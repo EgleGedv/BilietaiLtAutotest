@@ -57,6 +57,6 @@ public class Homepage {
     }
 
     public static void selectDovanuCekiai() {
-        Common.clickElement(Locator.Homepage.buttonDovanuCekiai);
+        Common.clickElement(Locator.Homepage.tabDovanuCekiai);
     }
 }

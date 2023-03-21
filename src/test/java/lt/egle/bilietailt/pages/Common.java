@@ -135,7 +135,6 @@ public class Common {
         } catch (NoAlertPresentException e) {
             return false;
         }
-
         return true;
     }
 
